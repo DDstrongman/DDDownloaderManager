@@ -11,7 +11,11 @@
 **使用request类发起请求，能够进行简单的请求api管理**
 
 ```objective-c
-- (nullable NSMutableArray <id <DDWebObjectCancelOperation>> *)downloadObjectWithRequests:(nullable NSMutableArray <DDDownloaderRequest *> *)requests options:(DDDownloaderOptions)options progress:(nullable DDWebObjectDownloaderProgressBlock)progressBlock singleCompleted:(nullable DDDownloadCompletionBlock)completedBlock allCompleted:(nullable DDDownloadAllCompletionBlock)allCompleteBlock;
+- (nullable NSMutableArray <id <DDWebObjectCancelOperation>> *)downloadObjectWithRequests:(nullable NSMutableArray <DDDownloaderRequest *> *)requests 
+  options:(DDDownloaderOptions)options 
+    progress:(nullable DDWebObjectDownloaderProgressBlock)progressBlock
+      singleCompleted:(nullable DDDownloadCompletionBlock)completedBlock
+        allCompleted:(nullable DDDownloadAllCompletionBlock)allCompleteBlock;
 ```
 举个简单粗暴塞入urls的🌰:
 
