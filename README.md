@@ -24,14 +24,17 @@ NSMutableArray *testArray = [NSMutableArray array];
     for (int i = 0; i < 15; i++) {
         [testArray addObject:@"https://www.baidu.com"];
     }
-[[DDDownloaderManager sharedManager]downloadObjectWithURL:[NSURL URLWithString:@"https://cdn.gkid.com/dataupload/tools/2019-08-29/bf1e0b52-ef00-43e2-8c94-47a5e64e1d6c/ViewController_new.lua"]
-                                                      options:DDDownloaderRetryFailed
-                                                     progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
-                                                         NSLog(@"progress======%ld,expectedSize========%ld",receivedSize,expectedSize);
-                                                     }
-                                                    completed:^(NSData * _Nullable data, NSError * _Nullable error, BOOL finished, NSURL * _Nullable objectURL, NSString * _Nullable filePath) {
-                                                        NSLog(@"objectUrl=======%@,result=======%ld,fileUrl======%@",objectURL,finished,filePath);
-                                                    }];
+[[DDDownloaderManager sharedManager]downloadObjectWithURLS:testArray
+                                                       options:DDDownloaderRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+                                                           NSLog(@"progress======%ld,expectedSize========%ld",receivedSize,expectedSize);
+                                                       }
+                                               singleCompleted:^(NSData * _Nullable data, NSError * _Nullable error, BOOL finished, NSURL * _Nullable objectURL, NSString * _Nullable filePath) {
+                                                   NSLog(@"objectUrl=======%@,result=======%ld,fileUrl======%@",objectURL,finished,filePath);
+                                                   
+                                               }
+                                                  allCompleted:^(BOOL finished) {
+                                                      NSLog(@"result=======%ld",finished);
+                                                  }];
 ```
 
 
