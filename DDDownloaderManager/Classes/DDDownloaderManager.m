@@ -55,6 +55,10 @@
     return self;
 }
 
+- (nullable NSString *)diskPathForURL:(nullable NSURL *)url {
+    return [_diskCache defaultCachePathForKey:[self cacheKeyForURL:url]];
+}
+
 - (nullable NSString *)cacheKeyForURL:(nullable NSURL *)url {
     if (!url) {
         return @"";

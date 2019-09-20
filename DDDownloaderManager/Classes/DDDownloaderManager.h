@@ -203,8 +203,8 @@ shouldDownloadObjectForURL:(nullable NSURL *)objectURL;
                     completion:(nullable DDWebObjectCheckDiskCompletionBlock)completionBlock;
 
 /**
- * Return the cache key for a given URL
+ * Return the disk path for a given URL
  */
-- (nullable NSString *)cacheKeyForURL:(nullable NSURL *)url;
+- (nullable NSString *)diskPathForURL:(nullable NSURL *)url;
 
 @end
