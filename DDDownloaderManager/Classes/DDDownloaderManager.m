@@ -50,6 +50,7 @@
         _objectCache = cache;
         _objectDownloader = downloader;
         _failedURLs = [NSMutableSet new];
+        _diskCache = [DDDownloaderDiskControl new];
         _runningOperations = [NSMutableArray new];
     }
     return self;
